@@ -1,5 +1,6 @@
 data = []
 count = 0
+words_len = 0
 
 with open('reviews.txt', 'r') as file:
 	for message in file:
@@ -8,4 +9,9 @@ with open('reviews.txt', 'r') as file:
 		if count % 1000 == 0:
 			print(len(data))
 			
-print(data[0])
+print("finish reading. there is", len(data))
+
+for d in data:
+	words_len += len(d)
+
+print("average = ", words_len / len(data))
